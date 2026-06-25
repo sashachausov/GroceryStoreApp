@@ -5,6 +5,12 @@ VisualStudioVersion = 17.14.37314.3 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroceryStore.UI", "GroceryStore.UI\GroceryStore.UI.csproj", "{CD9AFCB8-459F-4DE1-AFB0-BC92C2187C37}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroceryStore.Domain", "GroceryStore.Domain\GroceryStore.Domain.csproj", "{398A44A6-B2F0-45F6-BCCE-516AC673D591}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroceryStore.Application", "GroceryStore.Application\GroceryStore.Application.csproj", "{83C7B099-F109-4159-BD8F-6DE56DCF59C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroceryStore.Infrastructure", "GroceryStore.Infrastructure\GroceryStore.Infrastructure.csproj", "{5D502BD6-CFE0-4E0B-AADB-8191F25216C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{CD9AFCB8-459F-4DE1-AFB0-BC92C2187C37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD9AFCB8-459F-4DE1-AFB0-BC92C2187C37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD9AFCB8-459F-4DE1-AFB0-BC92C2187C37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{398A44A6-B2F0-45F6-BCCE-516AC673D591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{398A44A6-B2F0-45F6-BCCE-516AC673D591}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{398A44A6-B2F0-45F6-BCCE-516AC673D591}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{398A44A6-B2F0-45F6-BCCE-516AC673D591}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83C7B099-F109-4159-BD8F-6DE56DCF59C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83C7B099-F109-4159-BD8F-6DE56DCF59C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83C7B099-F109-4159-BD8F-6DE56DCF59C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83C7B099-F109-4159-BD8F-6DE56DCF59C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D502BD6-CFE0-4E0B-AADB-8191F25216C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D502BD6-CFE0-4E0B-AADB-8191F25216C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D502BD6-CFE0-4E0B-AADB-8191F25216C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D502BD6-CFE0-4E0B-AADB-8191F25216C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
