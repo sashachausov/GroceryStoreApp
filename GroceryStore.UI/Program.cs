@@ -1,6 +1,7 @@
 using GroceryStore.Application.Interfaces;
 using GroceryStore.Application.Services;
-using GroceryStore.Infrastructure.Json;
+using GroceryStore.Infrastructure.Persistence.Json;
+using GroceryStore.UI.Forms;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace GroceryStore.UI
@@ -16,16 +17,22 @@ namespace GroceryStore.UI
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            System.Windows.Forms.Application.Run(new Form1());
+            //System.Windows.Forms.Application.Run(new Form1());
 
             var services = new ServiceCollection();
+
+            services.AddSingleton<ICategoryRepository, JsonCategoryRepository>();
+            services.AddSingleton<CategoryService>();
+
             services.AddSingleton<IProductRepository, JsonProductRepository>();
             services.AddSingleton<ProductService>();
+
+            services.AddSingleton<ProductsForm>();
+            services.AddSingleton<CategoriesForm>();
             services.AddSingleton<Form1>();
 
-            var prodiver = services.BuildServiceProvider();
-
-
+            var provider = services.BuildServiceProvider();
+            System.Windows.Forms.Application.Run(provider.GetRequiredService<CategoriesForm>());
         }        
     }
 }

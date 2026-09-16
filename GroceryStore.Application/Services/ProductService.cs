@@ -1,4 +1,5 @@
-﻿using GroceryStore.Application.Interfaces;
+﻿using GroceryStore.Application.Exceptions;
+using GroceryStore.Application.Interfaces;
 using GroceryStore.Application.Other;
 using GroceryStore.Domain.Entities;
 using GroceryStore.Domain.Enums;
@@ -24,6 +25,14 @@ namespace GroceryStore.Application.Services
            return await _repository.GetAllAsync();
         }
 
+        public async Task<Product?> GetByIdAsync(Guid id)
+        {
+            var product = await _repository.GetByIdAsync(id);
+            if (product == null)
+                throw new NotFoundException("Product not found.");
+            return product;
+        }
+
         public async Task CreateAsync(string name, string sku, decimal price, ProductUnit unit)
         {
             var product = new Product(name, sku, price, unit);
@@ -35,11 +44,18 @@ namespace GroceryStore.Application.Services
             var product = await _repository.GetByIdAsync(id);
 
             if (product == null)
-                throw new Exception("Product not found");
+                throw new NotFoundException("Product not found");
 
-            product.SetName(name);
-            product.SetSku(sku);
-            product.SetPrice(price);
+            try
+            {
+                product.SetName(name);
+                product.SetSku(sku);
+                product.SetPrice(price);
+            }
+            catch (ValidationException ex)
+            {
+                throw new ValidationException(ex.Message);
+            }
 
             await _repository.UpdateAsync(product);
         }

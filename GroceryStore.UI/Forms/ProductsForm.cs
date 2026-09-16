@@ -73,23 +73,28 @@ namespace GroceryStore.UI.Forms
             }            
         }
 
-        private async Task btnEdit_Click(object sender, EventArgs e)
+        private async void btnEdit_Click(object sender, EventArgs e)
         {
             if (dgvProducts.CurrentRow == null) return;
 
             var id = (Guid)dgvProducts.CurrentRow.Cells["Id"].Value;
 
-            var product = await _service.GetByIdAsync(id);
-
-            if (product == null) return;
-
-            var form = new EditProductForm(product);
-            if (form.ShowDialog() == DialogResult.OK)
+            try
             {
-                var result = form.Result!;
-                await _service.UpdateAsync(id, result.Name, result.Sku, result.Price, result.Unit);
-                await LoadProductsAsync();
+                var product = await _service.GetByIdAsync(id);
+
+                var form = new EditProductForm(product);
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    var result = form.Result!;
+                    await _service.UpdateAsync(id, result.Name, result.Sku, result.Price, result.Unit);
+                    await LoadProductsAsync();
+                }
             }
+            catch (Exception ex)
+            {
+                UIExceptionHandler.HandleException(ex);
+            }  
         }
 
         private async void btnDelete_Click(object sender, EventArgs e)

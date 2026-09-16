@@ -1,4 +1,5 @@
-﻿using GroceryStore.Application.Interfaces;
+﻿using GroceryStore.Application.Exceptions;
+using GroceryStore.Application.Interfaces;
 using GroceryStore.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -7,20 +8,27 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace GroceryStore.Infrastructure.Json
+namespace GroceryStore.Infrastructure.Persistence.Json
 {
     public class JsonProductRepository : IProductRepository
     {
-        private readonly string _filePath = "product.json";
+        private readonly string _filePath = "orders.json";
         
         public async Task<List<Product>> GetAllAsync()
         {
-            if (!File.Exists(_filePath))
-                return new List<Product>();
+            try
+            {
+                if (!File.Exists(_filePath))
+                    return new List<Product>();
 
-            var json = await File.ReadAllTextAsync(_filePath);
+                var json = await File.ReadAllTextAsync(_filePath);
 
-            return JsonSerializer.Deserialize<List<Product>>(json) ?? new List<Product>();
+                return JsonSerializer.Deserialize<List<Product>>(json) ?? new List<Product>();
+            }
+            catch 
+            {
+                throw new AppException("Failed to read product data.");
+            }
         }
 
         public async Task AddAsync(Product product)

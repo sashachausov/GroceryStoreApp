@@ -10,6 +10,13 @@
 
   <ItemGroup>
     <None Remove="Forms\EditForms\2nss2gfq.33o~" />
+    <None Remove="Images\System\DefaultImage.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\System\DefaultImage.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +26,10 @@
   <ItemGroup>
     <ProjectReference Include="..\GroceryStore.Application\GroceryStore.Application.csproj" />
     <ProjectReference Include="..\GroceryStore.Infrastructure\GroceryStore.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Images\Categories\" />
   </ItemGroup>
 
 </Project>

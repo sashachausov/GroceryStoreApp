@@ -11,4 +11,9 @@
     <ProjectReference Include="..\GroceryStore.Domain\GroceryStore.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Utilities\" />
+    <Folder Include="Serialization\" />
+  </ItemGroup>
+
 </Project>
