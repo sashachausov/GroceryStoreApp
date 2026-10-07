@@ -32,7 +32,7 @@ namespace GroceryStore.UI
             services.AddSingleton<Form1>();
 
             var provider = services.BuildServiceProvider();
-            System.Windows.Forms.Application.Run(provider.GetRequiredService<CategoriesForm>());
+            System.Windows.Forms.Application.Run(provider.GetRequiredService<ProductsForm>());
         }        
     }
 }

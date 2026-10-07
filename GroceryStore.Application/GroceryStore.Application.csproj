@@ -7,12 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="DTO\**" />
+    <EmbeddedResource Remove="DTO\**" />
+    <None Remove="DTO\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\GroceryStore.Domain\GroceryStore.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DTO\Customers\" />
-    <Folder Include="DTO\Products\" />
+    <Folder Include="Other\" />
   </ItemGroup>
 
 </Project>

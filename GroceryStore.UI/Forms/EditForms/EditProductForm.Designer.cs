@@ -42,6 +42,8 @@
             label2 = new Label();
             txtSku = new TextBox();
             label3 = new Label();
+            cmbCategory = new ComboBox();
+            categoryLabel = new Label();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudPriceTag).BeginInit();
             SuspendLayout();
@@ -78,7 +80,7 @@
             // nameLabel
             // 
             nameLabel.AutoSize = true;
-            nameLabel.Location = new Point(40, 60);
+            nameLabel.Location = new Point(40, 50);
             nameLabel.Name = "nameLabel";
             nameLabel.Size = new Size(62, 15);
             nameLabel.TabIndex = 9;
@@ -87,7 +89,7 @@
             // unitLabel
             // 
             unitLabel.AutoSize = true;
-            unitLabel.Location = new Point(40, 120);
+            unitLabel.Location = new Point(40, 140);
             unitLabel.Name = "unitLabel";
             unitLabel.Size = new Size(56, 15);
             unitLabel.TabIndex = 10;
@@ -95,7 +97,7 @@
             // 
             // txtName
             // 
-            txtName.Location = new Point(120, 57);
+            txtName.Location = new Point(120, 47);
             txtName.Name = "txtName";
             txtName.Size = new Size(421, 23);
             txtName.TabIndex = 12;
@@ -103,7 +105,7 @@
             // cmbUnit
             // 
             cmbUnit.FormattingEnabled = true;
-            cmbUnit.Location = new Point(120, 117);
+            cmbUnit.Location = new Point(120, 137);
             cmbUnit.Name = "cmbUnit";
             cmbUnit.Size = new Size(421, 23);
             cmbUnit.TabIndex = 13;
@@ -112,7 +114,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(40, 150);
+            label1.Location = new Point(40, 170);
             label1.Name = "label1";
             label1.Size = new Size(70, 15);
             label1.TabIndex = 17;
@@ -122,14 +124,15 @@
             // 
             nudPriceTag.DecimalPlaces = 2;
             nudPriceTag.Increment = new decimal(new int[] { 1, 0, 0, 131072 });
-            nudPriceTag.Location = new Point(120, 147);
+            nudPriceTag.Location = new Point(120, 167);
+            nudPriceTag.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
             nudPriceTag.Name = "nudPriceTag";
             nudPriceTag.Size = new Size(150, 23);
             nudPriceTag.TabIndex = 18;
             // 
             // btnSaveChanges
             // 
-            btnSaveChanges.Location = new Point(341, 146);
+            btnSaveChanges.Location = new Point(341, 166);
             btnSaveChanges.Name = "btnSaveChanges";
             btnSaveChanges.Size = new Size(200, 23);
             btnSaveChanges.TabIndex = 19;
@@ -141,7 +144,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(275, 150);
+            label2.Location = new Point(275, 170);
             label2.Name = "label2";
             label2.Size = new Size(30, 15);
             label2.TabIndex = 20;
@@ -149,7 +152,7 @@
             // 
             // txtSku
             // 
-            txtSku.Location = new Point(120, 86);
+            txtSku.Location = new Point(120, 106);
             txtSku.Name = "txtSku";
             txtSku.Size = new Size(421, 23);
             txtSku.TabIndex = 21;
@@ -157,17 +160,36 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(40, 90);
+            label3.Location = new Point(40, 110);
             label3.Name = "label3";
             label3.Size = new Size(62, 15);
             label3.TabIndex = 22;
             label3.Text = "Код (ЕСУ):";
+            // 
+            // cmbCategory
+            // 
+            cmbCategory.FormattingEnabled = true;
+            cmbCategory.Location = new Point(120, 77);
+            cmbCategory.Name = "cmbCategory";
+            cmbCategory.Size = new Size(421, 23);
+            cmbCategory.TabIndex = 23;
+            // 
+            // categoryLabel
+            // 
+            categoryLabel.AutoSize = true;
+            categoryLabel.Location = new Point(40, 80);
+            categoryLabel.Name = "categoryLabel";
+            categoryLabel.Size = new Size(66, 15);
+            categoryLabel.TabIndex = 24;
+            categoryLabel.Text = "Категория:";
             // 
             // EditProductForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(584, 246);
+            Controls.Add(categoryLabel);
+            Controls.Add(cmbCategory);
             Controls.Add(label3);
             Controls.Add(txtSku);
             Controls.Add(label2);
@@ -208,5 +230,7 @@
         private Label label2;
         private TextBox txtSku;
         private Label label3;
+        private ComboBox cmbCategory;
+        private Label categoryLabel;
     }
 }

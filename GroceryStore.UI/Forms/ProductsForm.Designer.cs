@@ -106,6 +106,7 @@
             btnSearchApply.Size = new Size(55, 55);
             btnSearchApply.TabIndex = 5;
             btnSearchApply.UseVisualStyleBackColor = true;
+            btnSearchApply.Click += btnSearchApply_Click;
             // 
             // dgvProducts
             // 
@@ -115,6 +116,7 @@
             dgvProducts.RowTemplate.Height = 25;
             dgvProducts.Size = new Size(805, 235);
             dgvProducts.TabIndex = 6;
+            dgvProducts.SelectionChanged += dgvProducts_SelectionChanged;
             // 
             // statusStrip1
             // 
@@ -129,6 +131,7 @@
             nudPrice.DecimalPlaces = 2;
             nudPrice.Increment = new decimal(new int[] { 1, 0, 0, 131072 });
             nudPrice.Location = new Point(120, 67);
+            nudPrice.Maximum = new decimal(new int[] { 99999, 0, 0, 0 });
             nudPrice.Name = "nudPrice";
             nudPrice.Size = new Size(639, 23);
             nudPrice.TabIndex = 8;

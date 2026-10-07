@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GroceryStore.Application.Other
+namespace GroceryStore.Application.Mappers.Product
 {
     public enum ProductSortOption
     {
@@ -18,6 +18,7 @@ namespace GroceryStore.Application.Other
     {
         public string? Name { get; set; }
         public decimal? MaxPrice { get; set; }
+        public Guid? CategoryId { get; set; }
 
         public ProductSortOption SortOption { get; set; } = ProductSortOption.Default;
     }
